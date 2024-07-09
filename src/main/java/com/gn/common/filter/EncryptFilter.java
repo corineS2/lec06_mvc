@@ -25,7 +25,7 @@ public class EncryptFilter extends HttpFilter implements Filter {
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
 		PasswordEncodingWrapper pew = new PasswordEncodingWrapper((HttpServletRequest)request);
-		chain.doFilter(request, response);
+		chain.doFilter(pew, response);
 	}
 
 	public void init(FilterConfig fConfig) throws ServletException {
